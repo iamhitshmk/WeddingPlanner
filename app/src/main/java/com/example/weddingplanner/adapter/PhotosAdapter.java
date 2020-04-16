@@ -20,6 +20,9 @@ public class PhotosAdapter extends RecyclerView.Adapter<PhotosAdapter.ViewHolder
 
     ArrayList<PhotosItem> photosItems;
 
+    public final int FULL_VIEW = 1;
+    public final int SPAN_VIEW = 2;
+
     public PhotosAdapter(ArrayList<PhotosItem> photosItems) {
         this.photosItems = photosItems;
     }
@@ -27,9 +30,9 @@ public class PhotosAdapter extends RecyclerView.Adapter<PhotosAdapter.ViewHolder
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.row_photos_item, parent, false);
 
+        View itemView = itemView = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.row_photos_item, parent, false);
         return new PhotosAdapter.ViewHolder(itemView);
     }
 
@@ -44,7 +47,17 @@ public class PhotosAdapter extends RecyclerView.Adapter<PhotosAdapter.ViewHolder
         return photosItems.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    @Override
+    public int getItemViewType(int position) {
+        if (position % 3 == 0){
+            return FULL_VIEW;
+        }
+        else {
+            return SPAN_VIEW;
+        }
+    }
+
+    class ViewHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.photosImage)
         ImageView photosImage;

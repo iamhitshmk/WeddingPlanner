@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.weddingplanner.R;
@@ -57,6 +58,20 @@ public class PhotosFragment extends Fragment {
 
     private void setUpAdapter(ArrayList<PhotosItem> photosItems){
         PhotosAdapter adapter = new PhotosAdapter(photosItems);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 2);
+        gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                if(position % 3 == 0){
+                    return 2;
+                }
+                else{
+                    return 1;
+                }
+            }
+        });
+
+        photosRecyclerView.setLayoutManager(gridLayoutManager);
         photosRecyclerView.setAdapter(adapter);
     }
 }
