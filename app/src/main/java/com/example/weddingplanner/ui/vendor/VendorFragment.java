@@ -1,9 +1,11 @@
 package com.example.weddingplanner.ui.vendor;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
@@ -12,6 +14,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.weddingplanner.IOnItemClickListener;
 import com.example.weddingplanner.R;
 import com.example.weddingplanner.adapter.VendorAdapter;
 import com.example.weddingplanner.pojo.VendorItem;
@@ -59,5 +62,13 @@ public class VendorFragment extends Fragment {
     private void setUpAdapter(ArrayList<VendorItem> vendorItems){
         VendorAdapter adapter = new VendorAdapter(vendorItems);
         vendorsRecyclerView.setAdapter(adapter);
+        adapter.setOnItemClickListener(new IOnItemClickListener() {
+            @Override
+            public void onItemClick(int id) {
+                Intent intent = new Intent(getActivity(),VendorListDetailsActivity.class);
+                intent.putExtra("id",id);
+                startActivity(intent);
+            }
+        });
     }
 }
