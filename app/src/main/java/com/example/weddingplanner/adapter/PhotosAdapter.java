@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.weddingplanner.IOnItemClickListener;
 import com.example.weddingplanner.R;
 import com.example.weddingplanner.pojo.PhotosItem;
 
@@ -19,7 +20,7 @@ import butterknife.ButterKnife;
 public class PhotosAdapter extends RecyclerView.Adapter<PhotosAdapter.ViewHolder> {
 
     ArrayList<PhotosItem> photosItems;
-
+    private IOnItemClickListener iOnItemClickListener;
     public final int FULL_VIEW = 1;
     public final int SPAN_VIEW = 2;
 
@@ -40,11 +41,22 @@ public class PhotosAdapter extends RecyclerView.Adapter<PhotosAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         PhotosItem item = photosItems.get(position);
         holder.photosImage.setImageResource(item.getPhotosImage());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iOnItemClickListener.onItemClick(item.getId());
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return photosItems.size();
+    }
+
+    public void setOnItemClickListener(IOnItemClickListener iOnItemClickListener) {
+        this.iOnItemClickListener = iOnItemClickListener;
     }
 
     @Override

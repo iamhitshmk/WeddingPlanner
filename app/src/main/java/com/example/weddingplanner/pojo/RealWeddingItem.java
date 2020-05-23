@@ -2,7 +2,8 @@ package com.example.weddingplanner.pojo;
 
 public class RealWeddingItem {
 
-    public RealWeddingItem(int realWeddingImage, String title, String description) {
+    public RealWeddingItem(int id,int realWeddingImage, String title, String description) {
+        this.id = id;
         this.realWeddingImage = realWeddingImage;
         this.title = title;
         this.description = description;
@@ -23,4 +24,10 @@ public class RealWeddingItem {
     private int realWeddingImage;
     private String title;
     private String description;
+
+    public int getId() {
+        return id;
+    }
+
+    private int id;
 }

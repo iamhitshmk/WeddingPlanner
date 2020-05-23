@@ -1,5 +1,6 @@
 package com.example.weddingplanner.ui.inspiration.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,8 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.weddingplanner.IOnItemClickListener;
+import com.example.weddingplanner.PhotoDetailActivity;
 import com.example.weddingplanner.R;
 import com.example.weddingplanner.adapter.PhotosAdapter;
 import com.example.weddingplanner.pojo.PhotosItem;
@@ -73,5 +76,15 @@ public class PhotosFragment extends Fragment {
 
         photosRecyclerView.setLayoutManager(gridLayoutManager);
         photosRecyclerView.setAdapter(adapter);
+
+        adapter.setOnItemClickListener(new IOnItemClickListener() {
+            @Override
+            public void onItemClick(int id) {
+                Intent intent = new Intent(getActivity(), PhotoDetailActivity.class);
+                intent.putExtra("screen","photos");
+                intent.putExtra("id",id);
+                startActivity(intent);
+            }
+        });
     }
 }

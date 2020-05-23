@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.weddingplanner.IOnItemClickListener;
 import com.example.weddingplanner.R;
 import com.example.weddingplanner.pojo.RealWeddingItem;
 
@@ -20,6 +21,7 @@ import butterknife.ButterKnife;
 public class RealWeddingAdapter extends RecyclerView.Adapter<RealWeddingAdapter.ViewHolder> {
 
     private ArrayList<RealWeddingItem> realWeddingItems;
+    private IOnItemClickListener iOnItemClickListener;
 
     public RealWeddingAdapter(ArrayList<RealWeddingItem> realWeddingItems) {
         this.realWeddingItems = realWeddingItems;
@@ -40,6 +42,17 @@ public class RealWeddingAdapter extends RecyclerView.Adapter<RealWeddingAdapter.
         holder.imgRealWedding.setImageResource(item.getRealWeddingImage());
         holder.tvTitle.setText(item.getTitle());
         holder.tvDescription.setText(item.getDescription());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iOnItemClickListener.onItemClick(item.getId());
+            }
+        });
+    }
+
+    public void setOnItemClickListener(IOnItemClickListener iOnItemClickListener) {
+        this.iOnItemClickListener = iOnItemClickListener;
     }
 
     @Override
