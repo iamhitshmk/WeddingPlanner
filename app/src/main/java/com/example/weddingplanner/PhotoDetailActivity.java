@@ -34,8 +34,7 @@ public class PhotoDetailActivity extends AppCompatActivity {
             listOfImages = getPhotoImagesBasedOnId(id);
         } else if (screen.equalsIgnoreCase("real_wedding")){
             listOfImages = getRealWeddingImagesBasedOnId(id);
-        }
-         else {
+        } else {
              listOfImages = getArticleImagesBasedOnID(id);
         }
         setUpAdapter(listOfImages);

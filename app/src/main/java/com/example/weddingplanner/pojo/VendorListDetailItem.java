@@ -1,6 +1,8 @@
 package com.example.weddingplanner.pojo;
 
-public class VendorListDetailItem {
+import java.io.Serializable;
+
+public class VendorListDetailItem implements Serializable {
 
     public VendorListDetailItem(int image, String name, String rating, String reviews, String location, String price) {
         this.image = image;

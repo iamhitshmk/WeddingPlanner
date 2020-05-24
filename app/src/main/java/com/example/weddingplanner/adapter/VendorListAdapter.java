@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.weddingplanner.IOnVendorItemClickListener;
 import com.example.weddingplanner.R;
 import com.example.weddingplanner.pojo.VendorListDetailItem;
 
@@ -20,6 +21,7 @@ import butterknife.ButterKnife;
 public class VendorListAdapter extends RecyclerView.Adapter<VendorListAdapter.ViewHolder> {
 
     private ArrayList<VendorListDetailItem> items;
+    private IOnVendorItemClickListener iOnItemClickListener;
 
     public VendorListAdapter(ArrayList<VendorListDetailItem> items) {
         this.items = items;
@@ -43,6 +45,17 @@ public class VendorListAdapter extends RecyclerView.Adapter<VendorListAdapter.Vi
         holder.tvRating.setText(item.getRating());
         holder.tvReviews.setText(item.getReviews());
         holder.tvPrice.setText(item.getPrice());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iOnItemClickListener.onItemClick(item);
+            }
+        });
+    }
+
+    public void setOnItemClickListener(IOnVendorItemClickListener iOnItemClickListener) {
+        this.iOnItemClickListener = iOnItemClickListener;
     }
 
     @Override

@@ -6,9 +6,12 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.weddingplanner.IOnVendorItemClickListener;
 import com.example.weddingplanner.R;
+import com.example.weddingplanner.VendorItemDetailsActivity;
 import com.example.weddingplanner.adapter.VendorListAdapter;
 import com.example.weddingplanner.pojo.VendorListDetailItem;
 
@@ -105,5 +108,13 @@ public class VendorListDetailsActivity extends AppCompatActivity {
     private void setUpAdapter(ArrayList<VendorListDetailItem> items){
         VendorListAdapter adapter = new VendorListAdapter(items);
         vendorListRecyclerView.setAdapter(adapter);
+        adapter.setOnItemClickListener(new IOnVendorItemClickListener() {
+            @Override
+            public void onItemClick(VendorListDetailItem item) {
+                Intent intent = new Intent(VendorListDetailsActivity.this, VendorItemDetailsActivity.class);
+                intent.putExtra("item",item);
+                startActivity(intent);
+            }
+        });
     }
 }
