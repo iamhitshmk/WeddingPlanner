@@ -11,11 +11,17 @@ public class ArticlesItem {
     }
 
     private int articleImage;
-
-    public ArticlesItem(int articleImage, String title) {
+    private String title;
+    public ArticlesItem(int id, int articleImage, String title) {
+        this.id = id;
         this.articleImage = articleImage;
         this.title = title;
     }
 
-    private String title;
+    public int getId() {
+        return id;
+    }
+
+    private int id;
 }
+

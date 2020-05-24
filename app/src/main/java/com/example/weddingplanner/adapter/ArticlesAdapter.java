@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.weddingplanner.IOnItemClickListener;
 import com.example.weddingplanner.R;
 import com.example.weddingplanner.pojo.ArticlesItem;
 
@@ -19,7 +20,8 @@ import butterknife.ButterKnife;
 
 public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.ViewHolder> {
 
-    ArrayList<ArticlesItem> articlesItems;
+    private ArrayList<ArticlesItem> articlesItems;
+    private IOnItemClickListener iOnItemClickListener;
 
     public ArticlesAdapter(ArrayList<ArticlesItem> articlesItems) {
         this.articlesItems = articlesItems;
@@ -39,8 +41,16 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.ViewHo
         ArticlesItem item = articlesItems.get(position);
         holder.imgArticle.setImageResource(item.getArticleImage());
         holder.tvTitle.setText(item.getTitle());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iOnItemClickListener.onItemClick(item.getId());
+            }
+        });
     }
-
+    public void setOnItemClickListener(IOnItemClickListener iOnItemClickListener) {
+        this.iOnItemClickListener = iOnItemClickListener;
+    }
     @Override
     public int getItemCount() {
         return articlesItems.size();
