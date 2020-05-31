@@ -10,10 +10,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
+import com.example.weddingplanner.ui.register.RegisterActivity;
 import com.example.weddingplanner.MainActivity;
 import com.example.weddingplanner.R;
-import com.example.weddingplanner.ui.register.RegisterActivity;
 import com.example.weddingplanner.utils.TextValidation;
 import com.example.weddingplanner.utils.Utility;
 import com.google.firebase.auth.FirebaseAuth;

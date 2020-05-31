@@ -45,6 +45,14 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:19.3.1'
 
     //Butter Knife
-    implementation 'com.jakewharton:butterknife:10.1.0'
+    annotationProcessor 'com.jakewharton:butterknife:10.1.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+
+    //room
+
+    implementation 'android.arch.persistence.room:runtime:1.1.1'
+    annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
+
+    //lottie
+    implementation 'com.airbnb.android:lottie:3.0.0'
 }

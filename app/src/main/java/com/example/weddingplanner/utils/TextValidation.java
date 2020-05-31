@@ -42,7 +42,6 @@ public class TextValidation {
 
 
     public static boolean validateMobileNumber(String mobileNumber) {
-
         if (mobileNumber.equals("")) {
             return false;
         } else if (mobileNumber.length() != 10) {
@@ -50,6 +49,41 @@ public class TextValidation {
         } else
             return true;
     }
+
+    public static boolean validateCardNumber(String strCardNumber) {
+        if (TextUtils.isEmpty(strCardNumber) || strCardNumber.length() < 16 || !strCardNumber.equals("1234567812345678")) {
+            return false;
+        } else {
+            return true;
+        }
+
+    }
+
+    public static boolean validateCVVNumber(String strCvvNumber) {
+        if (TextUtils.isEmpty(strCvvNumber) || strCvvNumber.length() < 3 || !strCvvNumber.equals("123")) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public static boolean validateExpiryDate(String strExpiryDate) {
+        if (TextUtils.isEmpty(strExpiryDate) || strExpiryDate.length() < 4 || !strExpiryDate.replaceAll("/","").equals("1234")) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public static boolean validateOTP(String strOtp) {
+        if (TextUtils.isEmpty(strOtp) || strOtp.length() < 6 || !strOtp.equals("123456")) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+
 
 
 
