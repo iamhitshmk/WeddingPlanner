@@ -15,10 +15,14 @@ public class MoreMenuViewModel extends ViewModel {
     public MoreMenuViewModel() {
         moreMenuList = new MutableLiveData<>();
         ArrayList<MoreMenuItem> listOfItems = new ArrayList<>();
-        listOfItems.add(new MoreMenuItem(1,R.drawable.ic_vendor_wedding_cakes,"Create Wedding"));
-        listOfItems.add(new MoreMenuItem(1,R.drawable.ic_vendor_wedding_cakes,"Create Wedding"));
-        listOfItems.add(new MoreMenuItem(1,R.drawable.ic_vendor_wedding_cakes,"Create Wedding"));
-        listOfItems.add(new MoreMenuItem(1,R.drawable.ic_vendor_wedding_cakes,"Create Wedding"));
+        listOfItems.add(new MoreMenuItem(1,R.drawable.ic_more_inbox,"Inbox"));
+        listOfItems.add(new MoreMenuItem(2,R.drawable.ic_more_wedding_join,"Join A Wedding"));
+        listOfItems.add(new MoreMenuItem(3,R.drawable.ic_more_create_wedding,"Create Your Wedding"));
+        listOfItems.add(new MoreMenuItem(4,R.drawable.ic_more_review,"Write a Review"));
+        listOfItems.add(new MoreMenuItem(5,R.drawable.ic_more_call,"Contact Support"));
+        listOfItems.add(new MoreMenuItem(6,R.drawable.ic_more_share,"Share This App"));
+        listOfItems.add(new MoreMenuItem(7,R.drawable.ic_more_about,"About"));
+
         moreMenuList.setValue(listOfItems);
     }
 

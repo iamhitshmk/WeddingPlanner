@@ -56,27 +56,25 @@ public class PhotoDetailActivity extends AppCompatActivity {
 
             case 3:
                 list.add(R.drawable.ic_photos_three);
-
                 break;
 
 
             case 4:
                 list.add(R.drawable.ic_photos_four);
-
                 break;
-
 
             case 5:
                 list.add(R.drawable.ic_photos_five);
-
                 break;
 
 
             case 6:
                 list.add(R.drawable.ic_photos_six);
+                break;
 
             case 7:
                 list.add(R.drawable.ic_photos_seven);
+                break;
 
             case 8:
                 list.add(R.drawable.ic_photos_eight);
@@ -211,7 +209,7 @@ public class PhotoDetailActivity extends AppCompatActivity {
                 break;
             case 50:
                 list.add(R.drawable.ic_photos_50);
-
+                break;
         }
         return list;
     }
@@ -285,6 +283,7 @@ public class PhotoDetailActivity extends AppCompatActivity {
                 list.add(R.drawable.ic_rw_shivali_abhjeet_3);
                 list.add(R.drawable.ic_rw_shivali_abhjeet_4);
                 list.add(R.drawable.ic_rw_shivali_abhjeet_5);
+                break;
             case 8:
                 list.add(R.drawable.ic_rw_sonal_akash_1);
                 list.add(R.drawable.ic_rw_sonal_akash_2);
@@ -294,6 +293,7 @@ public class PhotoDetailActivity extends AppCompatActivity {
                 list.add(R.drawable.ic_rw_sonal_akash_6);
                 list.add(R.drawable.ic_rw_sonal_akash_7);
                 list.add(R.drawable.ic_rw_sonal_akash_8);
+                break;
             case 9:
                 list.add(R.drawable.ic_rw_sumaan_ishaan_1);
                 list.add(R.drawable.ic_rw_sumaan_ishaan_2);
@@ -301,6 +301,7 @@ public class PhotoDetailActivity extends AppCompatActivity {
                 list.add(R.drawable.ic_rw_sumaan_ishaan_4);
                 list.add(R.drawable.ic_rw_sumaan_ishaan_5);
                 list.add(R.drawable.ic_rw_sumaan_ishaan_6);
+                break;
             case 10:
                 list.add(R.drawable.ic_rw_swati_kamlesh_1);
                 list.add(R.drawable.ic_rw_swati_kamlesh_2);
@@ -310,6 +311,7 @@ public class PhotoDetailActivity extends AppCompatActivity {
                 list.add(R.drawable.ic_rw_swati_kamlesh_6);
                 list.add(R.drawable.ic_rw_swati_kamlesh_7);
                 list.add(R.drawable.ic_rw_swati_kamlesh_8);
+                break;
         }
         return list;
     }
@@ -318,65 +320,80 @@ public class PhotoDetailActivity extends AppCompatActivity {
         list.clear();
         switch (id){
             case 1:
-                list.add(R.drawable.ic_photos_one);
-                list.add(R.drawable.ic_photos_two);
-                list.add(R.drawable.ic_photos_three);
-                list.add(R.drawable.ic_photos_four);
+                list.add(R.drawable.ic_article_1);
                 break;
 
             case 2:
-                list.add(R.drawable.ic_photos_one);
-                list.add(R.drawable.ic_photos_two);
-                list.add(R.drawable.ic_photos_three);
-                list.add(R.drawable.ic_photos_four);
+                list.add(R.drawable.ic_article_2);
                 break;
 
 
             case 3:
-                list.add(R.drawable.ic_photos_one);
-                list.add(R.drawable.ic_photos_two);
-                list.add(R.drawable.ic_photos_three);
-                list.add(R.drawable.ic_photos_four);
+                list.add(R.drawable.ic_article_3);
+
                 break;
 
 
             case 4:
-                list.add(R.drawable.ic_photos_one);
-                list.add(R.drawable.ic_photos_two);
-                list.add(R.drawable.ic_photos_three);
-                list.add(R.drawable.ic_photos_four);
+                list.add(R.drawable.ic_article_4);
+
                 break;
 
 
             case 5:
-                list.add(R.drawable.ic_photos_one);
-                list.add(R.drawable.ic_photos_two);
-                list.add(R.drawable.ic_photos_three);
-                list.add(R.drawable.ic_photos_four);
+                list.add(R.drawable.ic_article_5);
+
                 break;
 
 
             case 6:
-                list.add(R.drawable.ic_photos_one);
-                list.add(R.drawable.ic_photos_two);
-                list.add(R.drawable.ic_photos_three);
-                list.add(R.drawable.ic_photos_four);
+                list.add(R.drawable.ic_article_6);
                 break;
             case 7:
+                list.add(R.drawable.ic_article_7);
+                break;
             case 8:
+                list.add(R.drawable.ic_article_8);
+                break;
             case 9:
+                list.add(R.drawable.ic_article_9);
+                break;
             case 10:
+                list.add(R.drawable.ic_article_10);
+                break;
             case 11:
+                list.add(R.drawable.ic_article_11);
+                break;
             case 12:
+                list.add(R.drawable.ic_article_12);
+                break;
             case 13:
+                list.add(R.drawable.ic_article_13);
+                break;
             case 14:
+                list.add(R.drawable.ic_article_14);
+                break;
             case 15:
+                list.add(R.drawable.ic_article_15);
+                break;
             case 16:
+                list.add(R.drawable.ic_article_16);
+                break;
             case 17:
+                list.add(R.drawable.ic_article_17);
+                break;
             case 18:
+                list.add(R.drawable.ic_article_18);
+                break;
             case 19:
+                list.add(R.drawable.ic_article_19);
+                break;
             case 20:
+                list.add(R.drawable.ic_article_20);
+                break;
             case 21:
+                list.add(R.drawable.ic_article_21);
+                break;
 
         }
         return list;

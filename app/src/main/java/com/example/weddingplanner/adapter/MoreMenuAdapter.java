@@ -39,7 +39,7 @@ public class MoreMenuAdapter extends RecyclerView.Adapter<MoreMenuAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         MoreMenuItem item = moreMenuItems.get(position);
-        //holder.moreMenuImageView.setImageResource(item.getImage());
+        holder.moreMenuImageView.setImageResource(item.getImage());
         holder.moreMenuTitle.setText(item.getName());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
