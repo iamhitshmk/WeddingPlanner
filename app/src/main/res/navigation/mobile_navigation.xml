@@ -22,4 +22,10 @@
         android:name="com.example.weddingplanner.ui.vendor.VendorFragment"
         android:label="@string/title_vendor"
         tools:layout="@layout/fragment_vendor" />
+
+    <fragment
+        android:id="@+id/navigation_more"
+        android:name="com.example.weddingplanner.ui.more.MoreMenuFragment"
+        android:label="@string/title_more"
+        tools:layout="@layout/fragment_more_menu" />
 </navigation>

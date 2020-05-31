@@ -1,4 +1,4 @@
-package com.example.weddingplanner;
+package com.example.weddingplanner.ui.register;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.weddingplanner.R;
+import com.example.weddingplanner.utils.TextValidation;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

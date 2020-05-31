@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.weddingplanner.IOnItemClickListener;
+import com.example.weddingplanner.listener.IOnItemClickListener;
 import com.example.weddingplanner.PhotoDetailActivity;
 import com.example.weddingplanner.R;
 import com.example.weddingplanner.adapter.PhotosAdapter;

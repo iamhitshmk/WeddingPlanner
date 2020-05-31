@@ -1,4 +1,4 @@
-package com.example.weddingplanner;
+package com.example.weddingplanner.utils;
 
 import android.text.Editable;
 import android.text.TextUtils;
@@ -33,7 +33,6 @@ public class TextValidation {
 
     public static boolean validatePassword(String password) {
         if (TextUtils.isEmpty(password) ||  password.length() < 8) {
-
             return false;
         } else {
             return true;

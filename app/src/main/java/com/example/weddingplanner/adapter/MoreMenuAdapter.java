@@ -11,36 +11,37 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.weddingplanner.listener.IOnItemClickListener;
 import com.example.weddingplanner.R;
-import com.example.weddingplanner.pojo.ArticlesItem;
+import com.example.weddingplanner.pojo.MoreMenuItem;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.ViewHolder> {
+public class MoreMenuAdapter extends RecyclerView.Adapter<MoreMenuAdapter.ViewHolder> {
 
-    private ArrayList<ArticlesItem> articlesItems;
     private IOnItemClickListener iOnItemClickListener;
+    private ArrayList<MoreMenuItem> moreMenuItems;
 
-    public ArticlesAdapter(ArrayList<ArticlesItem> articlesItems) {
-        this.articlesItems = articlesItems;
+    public MoreMenuAdapter(ArrayList<MoreMenuItem> moreMenuItems) {
+        this.moreMenuItems = moreMenuItems;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.row_article_item, parent, false);
+                .inflate(R.layout.row_more_menu_item, parent, false);
 
-        return new ArticlesAdapter.ViewHolder(itemView);
+        return new MoreMenuAdapter.ViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ArticlesItem item = articlesItems.get(position);
-        holder.imgArticle.setImageResource(item.getArticleImage());
-        holder.tvTitle.setText(item.getTitle());
+        MoreMenuItem item = moreMenuItems.get(position);
+        //holder.moreMenuImageView.setImageResource(item.getImage());
+        holder.moreMenuTitle.setText(item.getName());
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,21 +49,23 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.ViewHo
             }
         });
     }
-    public void setOnItemClickListener(IOnItemClickListener iOnItemClickListener) {
-        this.iOnItemClickListener = iOnItemClickListener;
-    }
+
     @Override
     public int getItemCount() {
-        return articlesItems.size();
+        return moreMenuItems.size();
+    }
+
+    public void setOnItemClickListener(IOnItemClickListener iOnItemClickListener) {
+        this.iOnItemClickListener = iOnItemClickListener;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.imgArticle)
-        ImageView imgArticle;
+        @BindView(R.id.moreMenuImageView)
+        ImageView moreMenuImageView;
 
-        @BindView(R.id.tvTitle)
-        TextView tvTitle;
+        @BindView(R.id.moreMenuTitle)
+        TextView moreMenuTitle;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

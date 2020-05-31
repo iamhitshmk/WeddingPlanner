@@ -1,4 +1,4 @@
-package com.example.weddingplanner;
+package com.example.weddingplanner.ui.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,11 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.weddingplanner.MainActivity;
+import com.example.weddingplanner.R;
+import com.example.weddingplanner.ui.register.RegisterActivity;
+import com.example.weddingplanner.utils.TextValidation;
+import com.example.weddingplanner.utils.Utility;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -37,47 +42,46 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.btnSubmit)
-    void onBtnLoginClicked(){
+    void onBtnLoginClicked() {
         String strEmailId = etEmailId.getText().toString();
         String strPassword = etPassword.getText().toString();
-        if (TextValidation.validateEmail(strEmailId)){
-            if (TextValidation.validatePassword("Enter Password")){
+        if (TextValidation.validateEmail(strEmailId)) {
+            if (TextValidation.validatePassword(strPassword)) {
                 hideKeyboard();
-                loginWebService(strEmailId,strPassword);
+                loginWebService(strEmailId, strPassword);
             } else {
-                Toast.makeText(this,"Enter Password",Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Enter Password", Toast.LENGTH_LONG).show();
             }
         } else {
-            Toast.makeText(this,"Enter Email Id",Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Enter Email Id", Toast.LENGTH_LONG).show();
         }
     }
 
     @OnClick(R.id.btnRegister)
-    void onRegisterButtonClicked(){
-        Intent registerIntent = new Intent(this,RegisterActivity.class);
+    void onRegisterButtonClicked() {
+        Intent registerIntent = new Intent(this, RegisterActivity.class);
         startActivity(registerIntent);
     }
 
-    private void loginWebService(String emailId,String password){
+    private void loginWebService(String emailId, String password) {
         progressBar.setVisibility(View.VISIBLE);
         FirebaseAuth auth = FirebaseAuth.getInstance();
 
-        auth.signInWithEmailAndPassword(emailId,password)
+        auth.signInWithEmailAndPassword(emailId, password)
                 .addOnCompleteListener(LoginActivity.this, task -> {
-                    if(task.isSuccessful()){
+                    if (task.isSuccessful()) {
                         final FirebaseUser firebaseUser = task.getResult().getUser();
                         String name = firebaseUser.getDisplayName();
                         progressBar.setVisibility(View.GONE);
-                        //Utility.setIsLoggedIn(getApplicationContext(),true);
+                        Utility.setIsLoggedIn(getApplicationContext(),true);
                         //Utility.setName(getApplicationContext(),name);
-                        Toast.makeText(getApplicationContext(),"Login Successfull.", Toast.LENGTH_LONG).show();
-                        Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+                        Toast.makeText(LoginActivity.this, "Login Successfull.", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
                         finish();
 
-                    }
-                    else {
-                        Toast.makeText(getApplicationContext(),"Login failed.",Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Login failed.", Toast.LENGTH_LONG).show();
                         progressBar.setVisibility(View.GONE);
                     }
                 });

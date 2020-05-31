@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.weddingplanner.IOnVendorItemClickListener;
+import com.example.weddingplanner.listener.IOnVendorItemClickListener;
 import com.example.weddingplanner.R;
 import com.example.weddingplanner.pojo.VendorListDetailItem;
 

@@ -11,12 +11,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.weddingplanner.LoginActivity;
-import com.example.weddingplanner.MainActivity;
+import com.example.weddingplanner.ui.login.LoginActivity;
 import com.example.weddingplanner.R;
 import com.example.weddingplanner.adapter.IntroAdapter;
 import com.example.weddingplanner.pojo.IntroItem;
-import com.example.weddingplanner.ui.vendor.VendorViewModel;
 
 import java.util.ArrayList;
 
@@ -71,7 +69,7 @@ public class IntroActivity extends AppCompatActivity {
         tvClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(IntroActivity.this, MainActivity.class);
+                Intent intent = new Intent(IntroActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }

@@ -1,4 +1,4 @@
-package com.example.weddingplanner;
+package com.example.weddingplanner.listener;
 
 import com.example.weddingplanner.pojo.VendorListDetailItem;
 

@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.weddingplanner.IOnItemClickListener;
+import com.example.weddingplanner.listener.IOnItemClickListener;
 import com.example.weddingplanner.R;
 import com.example.weddingplanner.pojo.PhotosItem;
 

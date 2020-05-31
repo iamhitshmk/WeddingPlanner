@@ -1,0 +1,76 @@
+package com.example.weddingplanner.ui.more;
+
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
+
+import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.example.weddingplanner.listener.IOnItemClickListener;
+import com.example.weddingplanner.MoreMenuViewModel;
+import com.example.weddingplanner.R;
+import com.example.weddingplanner.adapter.MoreMenuAdapter;
+import com.example.weddingplanner.pojo.MoreMenuItem;
+
+import java.util.ArrayList;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+public class MoreMenuFragment extends Fragment {
+
+    @BindView(R.id.moreMenuRecyclerView)
+    RecyclerView moreMenuRecyclerView;
+
+    private MoreMenuViewModel mViewModel;
+
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mViewModel = ViewModelProviders.of(this).get(MoreMenuViewModel.class);
+    }
+
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_more_menu, container, false);
+        ButterKnife.bind(this,view);
+        return view;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        mViewModel.getMoreMenuList().observe(this, new Observer<ArrayList<MoreMenuItem>>() {
+            @Override
+            public void onChanged(ArrayList<MoreMenuItem> moreMenuItems) {
+                setUpAdapter(moreMenuItems);
+            }
+        });
+
+    }
+
+    private void setUpAdapter(ArrayList<MoreMenuItem> moreMenuItems){
+        MoreMenuAdapter adapter = new MoreMenuAdapter(moreMenuItems);
+        moreMenuRecyclerView.setAdapter(adapter);
+        adapter.setOnItemClickListener(new IOnItemClickListener() {
+            @Override
+            public void onItemClick(int id) {
+                //Intent intent = new Intent(getActivity(),VendorListDetailsActivity.class);
+                //intent.putExtra("id",id);
+                //startActivity(intent);
+            }
+        });
+    }
+
+}

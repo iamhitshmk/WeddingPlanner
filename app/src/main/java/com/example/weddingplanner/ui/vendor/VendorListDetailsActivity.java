@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.weddingplanner.IOnVendorItemClickListener;
+import com.example.weddingplanner.listener.IOnVendorItemClickListener;
 import com.example.weddingplanner.R;
 import com.example.weddingplanner.VendorItemDetailsActivity;
 import com.example.weddingplanner.adapter.VendorListAdapter;
