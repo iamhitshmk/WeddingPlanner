@@ -16,7 +16,9 @@ public class ArticlesItem {
         this.id = id;
         this.articleImage = articleImage;
         this.title = title;
+
     }
+
 
     public int getId() {
         return id;
