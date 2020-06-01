@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+
 public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.ViewHolder> {
 
     private ArrayList<ArticlesItem> articlesItems;
@@ -63,7 +64,6 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.ViewHo
 
         @BindView(R.id.tvTitle)
         TextView tvTitle;
-
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
