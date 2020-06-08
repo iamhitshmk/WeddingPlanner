@@ -42,7 +42,7 @@ public class ShortListAdapter extends RecyclerView.Adapter<ShortListAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ShortListAdapter.ViewHolder holder, int position) {
         PlaceOrderItem item = items.get(position);
-        //holder.imgVendor.setImageResource(item.getImage());
+        holder.imgVendor.setImageResource(item.getImage());
         holder.tvName.setText(item.getName());
         holder.tvLocation.setText(item.getLocation());
         holder.tvRating.setText(item.getRating());

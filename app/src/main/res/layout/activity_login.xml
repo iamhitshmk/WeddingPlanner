@@ -10,9 +10,12 @@
         android:id="@+id/imgHeader"
         android:layout_width="0dp"
         android:layout_height="200dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_signin_image"
+        app:layout_constraintBottom_toTopOf="@+id/tvSingleText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvSingleText"

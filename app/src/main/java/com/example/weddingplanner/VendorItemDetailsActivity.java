@@ -40,7 +40,7 @@ public class VendorItemDetailsActivity extends AppCompatActivity {
         if (item != null){
             tvName.setText(item.getName());
             tvAddress.setText(item.getLocation());
-            //image.setImageResource(item.getImage());
+            image.setImageResource(item.getImage());
             tvReviews.setText(item.getReviews());
         }
     }
