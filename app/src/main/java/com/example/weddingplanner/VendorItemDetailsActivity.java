@@ -6,10 +6,14 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.weddingplanner.database.AppExecutors;
+import com.example.weddingplanner.database.WeddingPlannerDatabase;
+import com.example.weddingplanner.pojo.PlaceOrderItem;
 import com.example.weddingplanner.pojo.VendorListDetailItem;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class VendorItemDetailsActivity extends AppCompatActivity {
 
@@ -36,9 +40,23 @@ public class VendorItemDetailsActivity extends AppCompatActivity {
         if (item != null){
             tvName.setText(item.getName());
             tvAddress.setText(item.getLocation());
-            image.setImageResource(item.getImage());
+            //image.setImageResource(item.getImage());
             tvReviews.setText(item.getReviews());
         }
+    }
+
+
+    @OnClick(R.id.imageShortList)
+    void addItemToDb(){
+        WeddingPlannerDatabase database = WeddingPlannerDatabase.getInstance(this);
+        PlaceOrderItem placeOrderItem = new PlaceOrderItem(item.getImage(),item.getName(),item.getRating(), item.getReviews(), item.getLocation(), item.getPrice());
+        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+            @Override
+            public void run() {
+                database.getWeddingPlannerDao().insertItem(placeOrderItem);
+            }
+        });
+
     }
 
 

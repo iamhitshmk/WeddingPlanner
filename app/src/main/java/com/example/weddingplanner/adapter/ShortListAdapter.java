@@ -9,36 +9,39 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.weddingplanner.listener.IOnVendorItemClickListener;
 import com.example.weddingplanner.R;
+import com.example.weddingplanner.listener.IOnShortListedItemClickListener;
+import com.example.weddingplanner.listener.IOnVendorItemClickListener;
+import com.example.weddingplanner.pojo.PlaceOrderItem;
 import com.example.weddingplanner.pojo.VendorListDetailItem;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class VendorListAdapter extends RecyclerView.Adapter<VendorListAdapter.ViewHolder> {
+public class ShortListAdapter extends RecyclerView.Adapter<ShortListAdapter.ViewHolder>{
 
-    private ArrayList<VendorListDetailItem> items;
-    private IOnVendorItemClickListener iOnItemClickListener;
+    private List<PlaceOrderItem> items;
+    private IOnShortListedItemClickListener iOnItemClickListener;
 
-    public VendorListAdapter(ArrayList<VendorListDetailItem> items) {
+    public ShortListAdapter(List<PlaceOrderItem> items) {
         this.items = items;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ShortListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.row_vendor_details_list_item, parent, false);
 
-        return new VendorListAdapter.ViewHolder(itemView);
+        return new ShortListAdapter.ViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        VendorListDetailItem item = items.get(position);
+    public void onBindViewHolder(@NonNull ShortListAdapter.ViewHolder holder, int position) {
+        PlaceOrderItem item = items.get(position);
         //holder.imgVendor.setImageResource(item.getImage());
         holder.tvName.setText(item.getName());
         holder.tvLocation.setText(item.getLocation());
@@ -54,7 +57,7 @@ public class VendorListAdapter extends RecyclerView.Adapter<VendorListAdapter.Vi
         });
     }
 
-    public void setOnItemClickListener(IOnVendorItemClickListener iOnItemClickListener) {
+    public void setOnItemClickListener(IOnShortListedItemClickListener iOnItemClickListener) {
         this.iOnItemClickListener = iOnItemClickListener;
     }
 
@@ -88,4 +91,5 @@ public class VendorListAdapter extends RecyclerView.Adapter<VendorListAdapter.Vi
             ButterKnife.bind(this,itemView);
         }
     }
+
 }

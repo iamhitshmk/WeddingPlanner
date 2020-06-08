@@ -1,5 +1,6 @@
 package com.example.weddingplanner.ui.payment;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -10,10 +11,19 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.weddingplanner.R;
+import com.example.weddingplanner.pojo.PlaceOrderItem;
+import com.example.weddingplanner.pojo.VendorListDetailItem;
 import com.example.weddingplanner.utils.TextValidation;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Random;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,7 +51,7 @@ public class CardActivity extends AppCompatActivity {
     @BindView(R.id.etExpiryDate)
     EditText etExpiryDate;
 
-
+    PlaceOrderItem item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +60,7 @@ public class CardActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         etCardNo.addTextChangedListener(watcher);
         etExpiryDate.addTextChangedListener(expiryDateWatcher);
+        item = (PlaceOrderItem) getIntent().getSerializableExtra("item");
 
     }
 
@@ -79,8 +90,11 @@ public class CardActivity extends AppCompatActivity {
 
     void proceedToPaymentActivity(){
         Intent paymentIntent = new Intent(CardActivity.this, PaymentActivity.class);
+        paymentIntent.putExtra("item",item);
         startActivity(paymentIntent);
     }
+
+
 
     private final TextWatcher watcher = new TextWatcher() {
         @Override

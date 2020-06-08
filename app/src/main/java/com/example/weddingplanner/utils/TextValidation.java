@@ -51,7 +51,7 @@ public class TextValidation {
     }
 
     public static boolean validateCardNumber(String strCardNumber) {
-        if (TextUtils.isEmpty(strCardNumber) || strCardNumber.length() < 16 || !strCardNumber.equals("1234567812345678")) {
+        if (TextUtils.isEmpty(strCardNumber) || strCardNumber.length() < 16 || !strCardNumber.equals("1234-5678-1234-5678")) {
             return false;
         } else {
             return true;

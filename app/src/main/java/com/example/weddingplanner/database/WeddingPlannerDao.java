@@ -13,8 +13,8 @@ import java.util.List;
 public interface WeddingPlannerDao {
 
     @Query("Select * from PlaceOrder")
-    List<PlaceOrderItem> getNotifications();
+    List<PlaceOrderItem> getItems();
 
     @Insert
-    void insertNotification(PlaceOrderItem placeOrderItem);
+    void insertItem(PlaceOrderItem placeOrderItem);
 }
