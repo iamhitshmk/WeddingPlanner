@@ -3,6 +3,7 @@ package com.example.weddingplanner.ui.more;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -19,6 +20,7 @@ import com.example.weddingplanner.MoreMenuViewModel;
 import com.example.weddingplanner.R;
 import com.example.weddingplanner.adapter.MoreMenuAdapter;
 import com.example.weddingplanner.pojo.MoreMenuItem;
+import com.example.weddingplanner.ui.viewOrders.ViewOrdersActivity;
 
 import java.util.ArrayList;
 
@@ -66,9 +68,10 @@ public class MoreMenuFragment extends Fragment {
         adapter.setOnItemClickListener(new IOnItemClickListener() {
             @Override
             public void onItemClick(int id) {
-                //Intent intent = new Intent(getActivity(),VendorListDetailsActivity.class);
-                //intent.putExtra("id",id);
-                //startActivity(intent);
+                if (id == 1) {
+                    Intent intent = new Intent(getActivity(), ViewOrdersActivity.class);
+                    startActivity(intent);
+                }
             }
         });
     }

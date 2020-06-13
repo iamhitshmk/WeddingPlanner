@@ -14,6 +14,34 @@ public class PlaceOrderItem implements Serializable {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+    public void setReviews(String reviews) {
+        this.reviews = reviews;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
     @PrimaryKey(autoGenerate = true)
     private int id;
 
@@ -40,6 +68,7 @@ public class PlaceOrderItem implements Serializable {
     public String getPrice() {
         return price;
     }
+
 
     @ColumnInfo(name = "image")
     private int image;
@@ -77,5 +106,8 @@ public class PlaceOrderItem implements Serializable {
         this.reviews = reviews;
         this.location = location;
         this.price = price;
+    }
+
+    public PlaceOrderItem() {
     }
 }
