@@ -83,6 +83,14 @@ public class TextValidation {
         }
     }
 
+    public static boolean validateText(String inputValue) {
+        if (TextUtils.isEmpty(inputValue)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
 
 
 

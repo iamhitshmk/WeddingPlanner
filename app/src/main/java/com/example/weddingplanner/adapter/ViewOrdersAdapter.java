@@ -1,5 +1,6 @@
 package com.example.weddingplanner.adapter;
 
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,10 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.weddingplanner.R;
-import com.example.weddingplanner.listener.IOnShortListedItemClickListener;
-import com.example.weddingplanner.listener.IOnVendorItemClickListener;
 import com.example.weddingplanner.pojo.PlaceOrderItem;
-import com.example.weddingplanner.pojo.VendorListDetailItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,52 +19,37 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ShortListAdapter extends RecyclerView.Adapter<ShortListAdapter.ViewHolder>{
+public class ViewOrdersAdapter extends RecyclerView.Adapter<ViewOrdersAdapter.ViewHolder>{
 
-    private List<PlaceOrderItem> items;
-    private IOnShortListedItemClickListener iOnItemClickListener;
+    ArrayList<PlaceOrderItem> viewOrders;
 
-    public ShortListAdapter(List<PlaceOrderItem> items) {
-        this.items = items;
+    public ViewOrdersAdapter(ArrayList<PlaceOrderItem> viewOrders) {
+        this.viewOrders = viewOrders;
     }
 
     @NonNull
     @Override
-    public ShortListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.row_vendor_details_list_item, parent, false);
 
-        return new ShortListAdapter.ViewHolder(itemView);
+        return new ViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ShortListAdapter.ViewHolder holder, int position) {
-        PlaceOrderItem item = items.get(position);
-        holder.imgVendor.setImageResource(item.getImage());
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        PlaceOrderItem item = viewOrders.get(position);
+        //holder.imgVendor.setImageResource(item.getImage());
         holder.tvName.setText(item.getName());
         holder.tvLocation.setText(item.getLocation());
         holder.tvRating.setText(item.getRating());
         holder.tvReviews.setText(item.getReviews());
         holder.tvPrice.setText(item.getPrice());
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (iOnItemClickListener != null) {
-                    iOnItemClickListener.onItemClick(item);
-                }
-
-            }
-        });
-    }
-
-    public void setOnItemClickListener(IOnShortListedItemClickListener iOnItemClickListener) {
-        this.iOnItemClickListener = iOnItemClickListener;
     }
 
     @Override
     public int getItemCount() {
-        return items.size();
+        return viewOrders.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -94,5 +77,4 @@ public class ShortListAdapter extends RecyclerView.Adapter<ShortListAdapter.View
             ButterKnife.bind(this,itemView);
         }
     }
-
 }

@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.weddingplanner.CreateWeddingActivity;
 import com.example.weddingplanner.listener.IOnItemClickListener;
 import com.example.weddingplanner.MoreMenuViewModel;
 import com.example.weddingplanner.R;
@@ -70,6 +71,9 @@ public class MoreMenuFragment extends Fragment {
             public void onItemClick(int id) {
                 if (id == 1) {
                     Intent intent = new Intent(getActivity(), ViewOrdersActivity.class);
+                    startActivity(intent);
+                } else if (id == 3) {
+                    Intent intent = new Intent(getActivity(), CreateWeddingActivity.class);
                     startActivity(intent);
                 }
             }

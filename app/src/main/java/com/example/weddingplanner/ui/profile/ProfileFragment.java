@@ -76,13 +76,5 @@ public class ProfileFragment extends Fragment {
     private void setAdapter(List<PlaceOrderItem> placeOrderItems){
         ShortListAdapter adapter = new ShortListAdapter(placeOrderItems);
         profileRecyclerView.setAdapter(adapter);
-        adapter.setOnItemClickListener(new IOnShortListedItemClickListener() {
-            @Override
-            public void onItemClick(PlaceOrderItem item) {
-                Intent intent = new Intent(getActivity(), CardActivity.class);
-                intent.putExtra("item",item);
-                startActivity(intent);
-            }
-        });
     }
 }
