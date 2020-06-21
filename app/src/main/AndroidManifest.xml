@@ -11,7 +11,10 @@
         android:roundIcon="@drawable/ic_app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShortlistedVendorActivity"></activity>
+        <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".WriteReviewActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".ShortlistedVendorActivity" />
         <activity android:name=".CreateWeddingActivity" />
         <activity android:name=".ui.payment.PlaceOrderSuccess" />
         <activity android:name=".ui.payment.PaymentActivity" />

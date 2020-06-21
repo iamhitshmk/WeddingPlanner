@@ -70,10 +70,12 @@ public class LoginActivity extends AppCompatActivity {
                 .addOnCompleteListener(LoginActivity.this, task -> {
                     if (task.isSuccessful()) {
                         final FirebaseUser firebaseUser = task.getResult().getUser();
-                        String name = firebaseUser.getDisplayName();
+                        String userName = firebaseUser.getDisplayName();
+                        String userEmailId = firebaseUser.getEmail();
                         progressBar.setVisibility(View.GONE);
                         Utility.setIsLoggedIn(getApplicationContext(),true);
-                        //Utility.setName(getApplicationContext(),name);
+                        Utility.setName(getApplicationContext(),userName);
+                        Utility.setEmailId(getApplicationContext(),userEmailId);
                         Toast.makeText(LoginActivity.this, "Login Successfull.", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
