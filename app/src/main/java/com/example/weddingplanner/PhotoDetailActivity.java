@@ -19,7 +19,7 @@ public class PhotoDetailActivity extends AppCompatActivity {
     RecyclerView recyclerView;
 
     int id;
-    String screen;
+
 
     ArrayList<Integer> listOfImages;
 
@@ -29,14 +29,7 @@ public class PhotoDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_photo_detail);
         ButterKnife.bind(this);
         id = getIntent().getIntExtra("id",-1);
-        screen = getIntent().getStringExtra("screen");
-        if (screen.equalsIgnoreCase("photos")){
-            listOfImages = getPhotoImagesBasedOnId(id);
-        } else if (screen.equalsIgnoreCase("real_wedding")){
-            listOfImages = getRealWeddingImagesBasedOnId(id);
-        } else {
-             listOfImages = getArticleImagesBasedOnID(id);
-        }
+        listOfImages = getPhotoImagesBasedOnId(id);
         setUpAdapter(listOfImages);
 
     }
@@ -212,192 +205,6 @@ public class PhotoDetailActivity extends AppCompatActivity {
                 break;
         }
         return list;
-    }
-
-    private ArrayList<Integer> getRealWeddingImagesBasedOnId(int id){
-        ArrayList<Integer> list = new ArrayList<>();
-        list.clear();
-        switch (id){
-            case 1:
-                list.add(R.drawable.ic_rw_aman_niti_1);
-                list.add(R.drawable.ic_rw_aman_niti_2);
-                list.add(R.drawable.ic_rw_aman_niti_3);
-                list.add(R.drawable.ic_rw_aman_niti_4);
-                list.add(R.drawable.ic_rw_aman_niti_5);
-                list.add(R.drawable.ic_rw_aman_niti_6);
-                break;
-
-            case 2:
-                list.add(R.drawable.ic_rw_ashritha_yashwant_1);
-                list.add(R.drawable.ic_rw_ashritha_yashwant_2);
-                list.add(R.drawable.ic_rw_ashritha_yashwant_3);
-                list.add(R.drawable.ic_rw_ashritha_yashwant_4);
-                break;
-
-
-            case 3:
-                list.add(R.drawable.ic_rw_palak_chirag_1);
-                list.add(R.drawable.ic_rw_palak_chirag_2);
-                list.add(R.drawable.ic_rw_palak_chirag_3);
-                list.add(R.drawable.ic_rw_palak_chirag_4);
-                list.add(R.drawable.ic_rw_palak_chirag_5);
-                list.add(R.drawable.ic_rw_palak_chirag_6);
-                break;
-
-
-            case 4:
-                list.add(R.drawable.ic_rw_prachi_mohit_1);
-                list.add(R.drawable.ic_rw_prachi_mohit_2);
-                list.add(R.drawable.ic_rw_prachi_mohit_3);
-                list.add(R.drawable.ic_rw_prachi_mohit_4);
-                list.add(R.drawable.ic_rw_prachi_mohit_5);
-                list.add(R.drawable.ic_rw_prachi_mohit_6);
-                list.add(R.drawable.ic_rw_prachi_mohit_7);
-                break;
-
-
-            case 5:
-                list.add(R.drawable.ic_rw_shailesh_divya_1);
-                list.add(R.drawable.ic_rw_shailesh_divya_2);
-                list.add(R.drawable.ic_rw_shailesh_divya_3);
-                list.add(R.drawable.ic_rw_shailesh_divya_4);
-                list.add(R.drawable.ic_rw_shailesh_divya_5);
-                list.add(R.drawable.ic_rw_shailesh_divya_6);
-                break;
-
-
-            case 6:
-                list.add(R.drawable.ic_rw_shekhar_madhuri_1);
-                list.add(R.drawable.ic_rw_shekhar_madhuri_2);
-                list.add(R.drawable.ic_rw_shekhar_madhuri_3);
-                list.add(R.drawable.ic_rw_shekhar_madhuri_4);
-                list.add(R.drawable.ic_rw_shekhar_madhuri_5);
-                list.add(R.drawable.ic_rw_shekhar_madhuri_6);
-                list.add(R.drawable.ic_rw_shekhar_madhuri_7);
-                list.add(R.drawable.ic_rw_shekhar_madhuri_8);
-                list.add(R.drawable.ic_rw_shekhar_madhuri_9);
-                break;
-            case 7:
-                list.add(R.drawable.ic_rw_shivali_abhjeet_1);
-                list.add(R.drawable.ic_rw_shivali_abhjeet_2);
-                list.add(R.drawable.ic_rw_shivali_abhjeet_3);
-                list.add(R.drawable.ic_rw_shivali_abhjeet_4);
-                list.add(R.drawable.ic_rw_shivali_abhjeet_5);
-                break;
-            case 8:
-                list.add(R.drawable.ic_rw_sonal_akash_1);
-                list.add(R.drawable.ic_rw_sonal_akash_2);
-                list.add(R.drawable.ic_rw_sonal_akash_3);
-                list.add(R.drawable.ic_rw_sonal_akash_4);
-                list.add(R.drawable.ic_rw_sonal_akash_5);
-                list.add(R.drawable.ic_rw_sonal_akash_6);
-                list.add(R.drawable.ic_rw_sonal_akash_7);
-                list.add(R.drawable.ic_rw_sonal_akash_8);
-                break;
-            case 9:
-                list.add(R.drawable.ic_rw_sumaan_ishaan_1);
-                list.add(R.drawable.ic_rw_sumaan_ishaan_2);
-                list.add(R.drawable.ic_rw_sumaan_ishaan_3);
-                list.add(R.drawable.ic_rw_sumaan_ishaan_4);
-                list.add(R.drawable.ic_rw_sumaan_ishaan_5);
-                list.add(R.drawable.ic_rw_sumaan_ishaan_6);
-                break;
-            case 10:
-                list.add(R.drawable.ic_rw_swati_kamlesh_1);
-                list.add(R.drawable.ic_rw_swati_kamlesh_2);
-                list.add(R.drawable.ic_rw_swati_kamlesh_3);
-                list.add(R.drawable.ic_rw_swati_kamlesh_4);
-                list.add(R.drawable.ic_rw_swati_kamlesh_5);
-                list.add(R.drawable.ic_rw_swati_kamlesh_6);
-                list.add(R.drawable.ic_rw_swati_kamlesh_7);
-                list.add(R.drawable.ic_rw_swati_kamlesh_8);
-                break;
-        }
-        return list;
-    }
-    private ArrayList<Integer> getArticleImagesBasedOnID(int id){
-        ArrayList<Integer> list = new ArrayList<>();
-        list.clear();
-        switch (id){
-            case 1:
-                list.add(R.drawable.ic_article_1);
-                break;
-
-            case 2:
-                list.add(R.drawable.ic_article_2);
-                break;
-
-
-            case 3:
-                list.add(R.drawable.ic_article_3);
-
-                break;
-
-
-            case 4:
-                list.add(R.drawable.ic_article_4);
-
-                break;
-
-
-            case 5:
-                list.add(R.drawable.ic_article_5);
-
-                break;
-
-
-            case 6:
-                list.add(R.drawable.ic_article_6);
-                break;
-            case 7:
-                list.add(R.drawable.ic_article_7);
-                break;
-            case 8:
-                list.add(R.drawable.ic_article_8);
-                break;
-            case 9:
-                list.add(R.drawable.ic_article_9);
-                break;
-            case 10:
-                list.add(R.drawable.ic_article_10);
-                break;
-            case 11:
-                list.add(R.drawable.ic_article_11);
-                break;
-            case 12:
-                list.add(R.drawable.ic_article_12);
-                break;
-            case 13:
-                list.add(R.drawable.ic_article_13);
-                break;
-            case 14:
-                list.add(R.drawable.ic_article_14);
-                break;
-            case 15:
-                list.add(R.drawable.ic_article_15);
-                break;
-            case 16:
-                list.add(R.drawable.ic_article_16);
-                break;
-            case 17:
-                list.add(R.drawable.ic_article_17);
-                break;
-            case 18:
-                list.add(R.drawable.ic_article_18);
-                break;
-            case 19:
-                list.add(R.drawable.ic_article_19);
-                break;
-            case 20:
-                list.add(R.drawable.ic_article_20);
-                break;
-            case 21:
-                list.add(R.drawable.ic_article_21);
-                break;
-
-        }
-        return list;
-
     }
 
     private void setUpAdapter(ArrayList<Integer> listOfImages){

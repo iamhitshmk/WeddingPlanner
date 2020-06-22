@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.weddingplanner.ArticleDetailActivity;
 import com.example.weddingplanner.listener.IOnItemClickListener;
 import com.example.weddingplanner.PhotoDetailActivity;
 import com.example.weddingplanner.R;
@@ -64,7 +65,7 @@ public class RealWeddingsFragment extends Fragment {
         adapter.setOnItemClickListener(new IOnItemClickListener() {
             @Override
             public void onItemClick(int id) {
-                Intent intent = new Intent(getActivity(), PhotoDetailActivity.class);
+                Intent intent = new Intent(getActivity(), ArticleDetailActivity.class);
                 intent.putExtra("screen","real_wedding");
                 intent.putExtra("id",id);
                 startActivity(intent);

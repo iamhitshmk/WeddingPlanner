@@ -1,22 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AboutActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:padding="10dp"
-        android:text="\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tAbout Us \n\nWho We Are? \nSugar, spice and everything nice! MarriageMenu is a team of powerpuff humans, that link their professional expertise to their personal love for weddings.We work at weddings, from weddings, for weddings. So sit back, log on to MarriageMenu, and feed all your whims and fancies!\n\nVendors \nFrom the fairly significant Mehendi Artist to the absolutely necessary Candid Photographer, we have a wedding vendor for all your needs! And for your comfort, you can find profile details, photos and reviews for all of these wedding vendors! \n\nPhotos \nFor all your wedding inspirations and ideas, we have a gallery of never ending photos that will keep you busy!\n\nReal Weddings \nEvery couple has a story to tell, and we have their wedding stories on our Real Weddings section. Inspiration is impulsive, after all. \n\nBlog \nThat would be your chock-a-block for all your wedding !\n\n\t\tMarriageMenu - Your Personal Wedding Planner \n\n\t\t\t\t\t\t\t\t\t\tPlan your wedding with Us\n\t\tMarriageMenu is an Indian Wedding Planning \n\t\tWebsite and app where you can find the best \n\t\twedding vendors, with prices and reviews at the \n\t\tclick of a button. Whether you are looking to hire wedding planners \n\t\tin India, or looking for the top photographers, or just some ideas and inspiration for your wedding. MarriageMenu can help you solve your wedding planning woes through its unique features. With a checklist, detailed vendor list, inspiration gallery and blog - you won't need to spend hours planning a wedding anymore.  "
-        android:textColor="@color/colorBlack"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.842"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:context=".AboutActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvAboutUs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="@color/colorAccent"
+            android:text="About Us"
+            android:gravity="center"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="Who We Are? \nSugar, spice and everything nice! MarriageMenu is a team of powerpuff humans, that link their professional expertise to their personal love for weddings.We work at weddings, from weddings, for weddings. So sit back, log on to MarriageMenu, and feed all your whims and fancies!\n\nVendors \nFrom the fairly significant Mehendi Artist to the absolutely necessary Candid Photographer, we have a wedding vendor for all your needs! And for your comfort, you can find profile details, photos and reviews for all of these wedding vendors! \n\nPhotos \nFor all your wedding inspirations and ideas, we have a gallery of never ending photos that will keep you busy!\n\nReal Weddings \nEvery couple has a story to tell, and we have their wedding stories on our Real Weddings section. Inspiration is impulsive, after all. \n\nBlog \nThat would be your chock-a-block for all your wedding !\n\n\t\tMarriageMenu - Your Personal Wedding Planner \n\n\t\t\t\t\t\t\t\t\t\tPlan your wedding with Us\n\t\tMarriageMenu is an Indian Wedding Planning \n\t\tWebsite and app where you can find the best \n\t\twedding vendors, with prices and reviews at the \n\t\tclick of a button. Whether you are looking to hire wedding planners \n\t\tin India, or looking for the top photographers, or just some ideas and inspiration for your wedding. MarriageMenu can help you solve your wedding planning woes through its unique features. With a checklist, detailed vendor list, inspiration gallery and blog - you won't need to spend hours planning a wedding anymore.  "
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.842"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAboutUs" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
