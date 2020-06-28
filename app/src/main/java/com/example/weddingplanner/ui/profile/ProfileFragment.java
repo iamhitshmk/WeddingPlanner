@@ -62,15 +62,16 @@ public class ProfileFragment extends Fragment {
     private void fetchItemsFromDatabase(){
         WeddingPlannerDatabase appDb = WeddingPlannerDatabase.getInstance(getActivity());
 
+        placeOrderItems.clear();
+        placeOrderItems = appDb.getWeddingPlannerDao().getItems();
+        setAdapter(placeOrderItems);
 
-        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+        /*AppExecutors.getInstance()().execute(new Runnable() {
             @Override
             public void run() {
-                placeOrderItems.clear();
-                placeOrderItems = appDb.getWeddingPlannerDao().getItems();
-                setAdapter(placeOrderItems);
+
             }
-        });
+        });*/
     }
 
     private void setAdapter(List<PlaceOrderItem> placeOrderItems){

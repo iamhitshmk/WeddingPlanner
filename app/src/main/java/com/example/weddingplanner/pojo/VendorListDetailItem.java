@@ -4,13 +4,14 @@ import java.io.Serializable;
 
 public class VendorListDetailItem implements Serializable {
 
-    public VendorListDetailItem(int image, String name, String rating, String reviews, String location, String price) {
+    public VendorListDetailItem(int image, String name, String rating, String reviews, String location, String price,String description) {
         this.image = image;
         this.name = name;
         this.rating = rating;
         this.reviews = reviews;
         this.location = location;
         this.price = price;
+        this.description = description;
     }
 
     public int getImage() {
@@ -43,4 +44,10 @@ public class VendorListDetailItem implements Serializable {
     private String reviews;
     private String location;
     private String price;
+
+    public String getDescription() {
+        return description;
+    }
+
+    private String description;
 }

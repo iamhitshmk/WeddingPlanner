@@ -13,11 +13,15 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class PhotoDetailActivity extends AppCompatActivity {
 
     @BindView(R.id.image)
     ImageView image;
+
+    @BindView(R.id.imgHeart)
+    ImageView imgHeart;
 
     int id;
 
@@ -237,6 +241,15 @@ public class PhotoDetailActivity extends AppCompatActivity {
                 image.setImageResource(R.drawable.ic_photos_50);
                 break;
                 
+        }
+    }
+
+    @OnClick(R.id.imgHeart)
+    void onHeartImageClicked(){
+        if (imgHeart.getDrawable().getConstantState() == getResources().getDrawable(R.drawable.ic_shortlist_heart).getConstantState()){
+            imgHeart.setImageResource(R.drawable.ic_icon_ashortlist);
+        } else {
+            imgHeart.setImageResource(R.drawable.ic_shortlist_heart);
         }
     }
 

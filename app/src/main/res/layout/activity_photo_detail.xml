@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PhotoDetailActivity">
+    tools:context=".PhotoDetailActivity"
+    android:background="@color/colorWhite">
 
 
     <ImageView
@@ -16,6 +17,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:adjustViewBounds="true"/>
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"/>
+
+
+    <ImageView
+        android:id="@+id/imgHeart"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_shortlist_heart"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

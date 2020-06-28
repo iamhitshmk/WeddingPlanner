@@ -1,5 +1,8 @@
 package com.example.weddingplanner.pojo;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
@@ -8,7 +11,45 @@ import androidx.room.PrimaryKey;
 import java.io.Serializable;
 
 @Entity(tableName = "PlaceOrder")
-public class PlaceOrderItem implements Serializable {
+public class PlaceOrderItem implements Parcelable {
+
+    protected PlaceOrderItem(Parcel in) {
+        id = in.readInt();
+        image = in.readInt();
+        name = in.readString();
+        rating = in.readString();
+        reviews = in.readString();
+        location = in.readString();
+        price = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeInt(image);
+        dest.writeString(name);
+        dest.writeString(rating);
+        dest.writeString(reviews);
+        dest.writeString(location);
+        dest.writeString(price);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<PlaceOrderItem> CREATOR = new Creator<PlaceOrderItem>() {
+        @Override
+        public PlaceOrderItem createFromParcel(Parcel in) {
+            return new PlaceOrderItem(in);
+        }
+
+        @Override
+        public PlaceOrderItem[] newArray(int size) {
+            return new PlaceOrderItem[size];
+        }
+    };
 
     public int getId() {
         return id;

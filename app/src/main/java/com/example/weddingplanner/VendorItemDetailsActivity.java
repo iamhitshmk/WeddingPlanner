@@ -29,6 +29,12 @@ public class VendorItemDetailsActivity extends AppCompatActivity {
     @BindView(R.id.tvReviews)
     TextView tvReviews;
 
+    @BindView(R.id.imageShortList)
+    ImageView imageShortList;
+
+    @BindView(R.id.tvDescription)
+    TextView tvDescription;
+
     VendorListDetailItem item;
 
     @Override
@@ -42,6 +48,7 @@ public class VendorItemDetailsActivity extends AppCompatActivity {
             tvAddress.setText(item.getLocation());
             image.setImageResource(item.getImage());
             tvReviews.setText(item.getReviews());
+            tvDescription.setText(item.getDescription());
         }
     }
 
@@ -50,12 +57,15 @@ public class VendorItemDetailsActivity extends AppCompatActivity {
     void addItemToDb(){
         WeddingPlannerDatabase database = WeddingPlannerDatabase.getInstance(this);
         PlaceOrderItem placeOrderItem = new PlaceOrderItem(item.getImage(),item.getName(),item.getRating(), item.getReviews(), item.getLocation(), item.getPrice());
-        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+        /*AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
                 database.getWeddingPlannerDao().insertItem(placeOrderItem);
+                imageShortList.setImageResource(R.drawable.ic_icon_ashortlist);
             }
-        });
+        });*/
+        database.getWeddingPlannerDao().insertItem(placeOrderItem);
+        imageShortList.setImageResource(R.drawable.ic_icon_ashortlist);
 
     }
 

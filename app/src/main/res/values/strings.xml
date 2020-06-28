@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">WeddingPlanner</string>
     <string name="title_inspiration">Inspiration</string>
-    <string name="title_profile">Profile</string>
+    <string name="title_shortlisted">Shortlisted</string>
     <string name="title_vendor">Vendor</string>
     <string name="title_more">More</string>
 </resources>

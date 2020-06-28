@@ -22,7 +22,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="Thank you for placing the order with us.We will notify you once the file gets printed."
+        android:text="Thank you for placing the order with us."
         android:gravity="center"
         android:textSize="21sp"
         app:layout_constraintTop_toBottomOf="@id/success_smile"

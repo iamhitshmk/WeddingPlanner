@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.example.weddingplanner.R;
 import com.example.weddingplanner.adapter.ViewOrdersAdapter;
 import com.example.weddingplanner.pojo.PlaceOrderItem;
+import com.example.weddingplanner.pojo.TransactionItem;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -55,8 +56,11 @@ public class ViewOrdersActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 progressBar.setVisibility(View.GONE);
                 for (DataSnapshot orderDataSnapshot : dataSnapshot.getChildren()) {
-                    PlaceOrderItem item = orderDataSnapshot.getValue(PlaceOrderItem.class);
-                    viewAllOrders.add(item);
+                    TransactionItem item = orderDataSnapshot.getValue(TransactionItem.class);
+                    if (item != null){
+                        viewAllOrders.addAll(item.getItems());
+                    }
+
                 }
 
                 if (viewAllOrders.size() > 0){

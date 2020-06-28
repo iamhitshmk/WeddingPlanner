@@ -19,6 +19,7 @@ public abstract class WeddingPlannerDatabase extends RoomDatabase {
         if (instance == null){
             instance = Room.databaseBuilder(context.getApplicationContext(), WeddingPlannerDatabase.class,DB_NAME)
                     .fallbackToDestructiveMigration()
+                    .allowMainThreadQueries()
                     .build();
         }
         return instance;

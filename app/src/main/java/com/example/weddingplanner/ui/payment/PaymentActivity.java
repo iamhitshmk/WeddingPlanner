@@ -14,12 +14,14 @@ import android.widget.Toast;
 
 import com.example.weddingplanner.R;
 import com.example.weddingplanner.pojo.PlaceOrderItem;
+import com.example.weddingplanner.pojo.TransactionItem;
 import com.example.weddingplanner.utils.TextValidation;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import butterknife.BindView;
@@ -34,14 +36,14 @@ public class PaymentActivity extends AppCompatActivity {
     @BindView(R.id.progressBar)
     ProgressBar progressBar;
 
-    PlaceOrderItem item;
+    ArrayList<PlaceOrderItem> item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
         ButterKnife.bind(this);
-        item = (PlaceOrderItem) getIntent().getSerializableExtra("item");
+        item = getIntent().getParcelableArrayListExtra("item");
     }
 
     @OnClick(R.id.btnPay)
@@ -60,7 +62,8 @@ public class PaymentActivity extends AppCompatActivity {
             progressBar.setVisibility(View.VISIBLE);
             DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
             String orderNumber = provideOrderNumber();
-            mDatabase.child("add_order").child(orderNumber).setValue(item)
+            TransactionItem transactionItem = new TransactionItem(orderNumber,item);
+            mDatabase.child("add_order").child(orderNumber).setValue(transactionItem)
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {

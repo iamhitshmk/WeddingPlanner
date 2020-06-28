@@ -12,9 +12,9 @@
         tools:layout="@layout/fragment_inspiration" />
 
     <fragment
-        android:id="@+id/navigation_profile"
+        android:id="@+id/navigation_shortlisted"
         android:name="com.example.weddingplanner.ui.profile.ProfileFragment"
-        android:label="@string/title_profile"
+        android:label="@string/title_shortlisted"
         tools:layout="@layout/fragment_profile" />
 
     <fragment

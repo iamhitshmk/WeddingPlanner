@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class ArticleDetailActivity extends AppCompatActivity {
 
@@ -22,6 +23,9 @@ public class ArticleDetailActivity extends AppCompatActivity {
 
     @BindView(R.id.tvDescription)
     TextView tvDescription;
+
+    @BindView(R.id.imgHeart)
+    ImageView imgHeart;
 
     String screen;
     int id;
@@ -344,6 +348,15 @@ public class ArticleDetailActivity extends AppCompatActivity {
         pagerSnapHelper.attachToRecyclerView(recyclerView);
         recyclerView.setAdapter(detailAdapter);
 
+    }
+
+    @OnClick(R.id.imgHeart)
+    void onHeartImageClicked(){
+        if (imgHeart.getDrawable().getConstantState() == getResources().getDrawable(R.drawable.ic_shortlist_heart).getConstantState()){
+            imgHeart.setImageResource(R.drawable.ic_icon_ashortlist);
+        } else {
+            imgHeart.setImageResource(R.drawable.ic_shortlist_heart);
+        }
     }
 
 }

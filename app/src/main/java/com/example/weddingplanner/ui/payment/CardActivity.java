@@ -23,6 +23,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import butterknife.BindView;
@@ -51,7 +52,7 @@ public class CardActivity extends AppCompatActivity {
     @BindView(R.id.etExpiryDate)
     EditText etExpiryDate;
 
-    PlaceOrderItem item;
+    ArrayList<PlaceOrderItem> item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +61,7 @@ public class CardActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         etCardNo.addTextChangedListener(watcher);
         etExpiryDate.addTextChangedListener(expiryDateWatcher);
-        item = (PlaceOrderItem) getIntent().getSerializableExtra("item");
+        item = getIntent().getParcelableArrayListExtra("item");
 
     }
 
@@ -90,7 +91,7 @@ public class CardActivity extends AppCompatActivity {
 
     void proceedToPaymentActivity(){
         Intent paymentIntent = new Intent(CardActivity.this, PaymentActivity.class);
-        paymentIntent.putExtra("item",item);
+        paymentIntent.putParcelableArrayListExtra("item",item);
         startActivity(paymentIntent);
     }
 
