@@ -11,7 +11,8 @@
         android:roundIcon="@drawable/ic_app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ArticleDetailActivity"></activity>
+        <activity android:name=".ui.viewOrders.OrderDetailsActivity"></activity>
+        <activity android:name=".ArticleDetailActivity" />
         <activity android:name=".JoinWeddingActivity" />
         <activity android:name=".AboutActivity" />
         <activity android:name=".WriteReviewActivity" />

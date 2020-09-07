@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.weddingplanner.R;
 import com.example.weddingplanner.adapter.ViewOrdersAdapter;
+import com.example.weddingplanner.listener.IOnInboxItemListener;
 import com.example.weddingplanner.pojo.PlaceOrderItem;
 import com.example.weddingplanner.pojo.TransactionItem;
 import com.google.firebase.database.DataSnapshot;
@@ -37,7 +39,7 @@ public class ViewOrdersActivity extends AppCompatActivity {
     @BindView(R.id.tvNoDataFound)
     TextView tvNoDataFound;
 
-    ArrayList<PlaceOrderItem> viewAllOrders;
+    ArrayList<TransactionItem> viewAllOrders;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +60,7 @@ public class ViewOrdersActivity extends AppCompatActivity {
                 for (DataSnapshot orderDataSnapshot : dataSnapshot.getChildren()) {
                     TransactionItem item = orderDataSnapshot.getValue(TransactionItem.class);
                     if (item != null){
-                        viewAllOrders.addAll(item.getItems());
+                        viewAllOrders.add(item);
                     }
 
                 }
@@ -80,9 +82,20 @@ public class ViewOrdersActivity extends AppCompatActivity {
         });
     }
 
-    private void setAdapter(ArrayList<PlaceOrderItem> orderItems){
+    private void setAdapter(ArrayList<TransactionItem> orderItems){
         ViewOrdersAdapter adapter = new ViewOrdersAdapter(orderItems);
         viewOrdersRecyclerView.setAdapter(adapter);
+        adapter.setOnItemClickListener(new IOnInboxItemListener() {
+            @Override
+            public void onItemClick(TransactionItem item) {
+                Intent intent = new Intent(
+                        ViewOrdersActivity.this,OrderDetailsActivity.class
+                );
+
+                intent.putExtra("item" , item);
+                startActivity(intent);
+            }
+        });
     }
 
 

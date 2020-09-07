@@ -11,7 +11,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.weddingplanner.R;
+import com.example.weddingplanner.listener.IOnInboxItemListener;
+import com.example.weddingplanner.listener.IOnItemClickListener;
 import com.example.weddingplanner.pojo.PlaceOrderItem;
+import com.example.weddingplanner.pojo.TransactionItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,30 +24,39 @@ import butterknife.ButterKnife;
 
 public class ViewOrdersAdapter extends RecyclerView.Adapter<ViewOrdersAdapter.ViewHolder>{
 
-    ArrayList<PlaceOrderItem> viewOrders;
+    ArrayList<TransactionItem> viewOrders;
+    private IOnInboxItemListener iOnItemClickListener;
 
-    public ViewOrdersAdapter(ArrayList<PlaceOrderItem> viewOrders) {
+    public ViewOrdersAdapter(ArrayList<TransactionItem> viewOrders) {
         this.viewOrders = viewOrders;
+    }
+
+    public void setOnItemClickListener(IOnInboxItemListener iOnItemClickListener) {
+        this.iOnItemClickListener = iOnItemClickListener;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.row_vendor_details_list_item, parent, false);
+                .inflate(R.layout.row_inbox_items, parent, false);
 
         return new ViewHolder(itemView);
-    }
+}
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        PlaceOrderItem item = viewOrders.get(position);
-        //holder.imgVendor.setImageResource(item.getImage());
-        holder.tvName.setText(item.getName());
-        holder.tvLocation.setText(item.getLocation());
-        holder.tvRating.setText(item.getRating());
-        holder.tvReviews.setText(item.getReviews());
-        holder.tvPrice.setText(item.getPrice());
+        TransactionItem item = viewOrders.get(position);
+        holder.tvOrderId.setText("Transaction ID : "+item.getOrderId());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (iOnItemClickListener != null){
+                    iOnItemClickListener.onItemClick(item);
+                }
+            }
+        });
+
     }
 
     @Override
@@ -54,23 +66,9 @@ public class ViewOrdersAdapter extends RecyclerView.Adapter<ViewOrdersAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.imgVendor)
-        ImageView imgVendor;
 
-        @BindView(R.id.tvName)
-        TextView tvName;
-
-        @BindView(R.id.tvRating)
-        TextView tvRating;
-
-        @BindView(R.id.tvReviews)
-        TextView tvReviews;
-
-        @BindView(R.id.tvLocation)
-        TextView tvLocation;
-
-        @BindView(R.id.tvPrice)
-        TextView tvPrice;
+       @BindView(R.id.tv_orderid)
+        TextView tvOrderId;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
