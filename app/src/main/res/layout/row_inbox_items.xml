@@ -11,7 +11,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:padding="10dp"
-        android:text="Your order has been Placed Successfully.  Your are your following details"
+        android:text="HITESH , Your order has been Placed Successfully. Thank You For Choosing WeddingPlanner."
         android:textColor="@color/colorBlack"/>
 
 
@@ -30,7 +30,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_orderid"
         android:padding="10dp"
-        android:text="Wedding Id : 10102"/>
+        android:text="Wedding InviteId : 10102"/>
+
+
 
 
 

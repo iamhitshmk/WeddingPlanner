@@ -57,7 +57,27 @@ public class ArticleDetailActivity extends AppCompatActivity {
                 list.add(R.drawable.ic_rw_aman_niti_4);
                 list.add(R.drawable.ic_rw_aman_niti_5);
                 list.add(R.drawable.ic_rw_aman_niti_6);
-                tvDescription.setText("Add Description");
+                tvDescription.setText("Okay, we can't lie! We love an offbeat bridal lehenga as much as we love the traditional red. Parita's olive green lehenga with multi coloured embriodery had our heart the minute we saw it! It's such a perfect colour for a wintery, sea-side wedding and we think that is exactly why Parita opted for it. Excellent photography by Marshmallow Studio as it captured all the details vividly! Scroll down and see, and don't forget to pin her lehenga for major inspo! \n" +
+                        "From The Bride: \n" +
+                        "As our wedding is arrange marriage. we were very excited to begin our future together as we both liked each other after our 1st day of meeting , and still knowing each other day by day that's what makes our journey surprising and interesting and rest is the history.\n" +
+                        "\n" +
+                        "Decorator & Wedding Planner: The Wedding Soul\n" +
+                        "Miss Vaishali Gohil & Mr. Ashok Jasani know exactly what their clients want and delivers it perfectly. They decor and planning was perfect. \n" +
+                        "\n" +
+                        "Makeup Artist:Hiya Makeup Studio\n" +
+                        "If you are getting married in Mumbai, this is the salon you need to check out.\n" +
+                        "\n" +
+                        "Venue - AnnaSaheb Vartak Hall,Mumbai\n" +
+                        "Excellent venue for the big fat Indian wedding. They can handle even a guest list of 5000 people! Hats off to them for what they do! \n" +
+                        "\n" +
+                        "Photography: Divyesh Harchekar Photography\n" +
+                        "Mr Harchekar, the sole star behind the scenes! Big cheers to him. \n" +
+                        "\n" +
+                        "Vendors: \n" +
+                        "Venue:  AnnaSaheb Vartak Hall, Mumbai ; \n" +
+                        "Makeup Artist: Hiya Makeup Studio ; \n" +
+                        "Photography: Divyesh Harchekar Photography;\n" +
+                        "Decor & Planning: The Wedding Soul, Surat; ");
                 break;
 
             case 2:
@@ -296,7 +316,6 @@ public class ArticleDetailActivity extends AppCompatActivity {
                         "\n" +
                         "While it'll be unfair to say that classic mandap decorations are done to death, couples surely have found one of the most amazing mandap substitutes--Trees. From giant-sized to the ones with lush greenery, trees can alone give a refreshing makeover to your nuptials. That's the charm of nature! And when you add to that your favorite blooms, some chandeliers and other rustic touches, it'll make your guests go head over heels! Check out these prettiest tree decor setups we bookmarked for you, and incorporate their freshness to your big day.");
                 break;
-
             case 20:
                 list.add(R.drawable.ic_article_20);
                 tvDescription.setText("The last few weeks we have had a huge upheaval in our cleanliness routines. Constant washing of hands and sanitizing them has become the new normal. But did you know that excessive use of hand sanitizer is bad for your engagement ring? Jewellery experts at Manali Jewellery, an online diamond retailer tell you on how to protect engagement rings from the excessive use of sanitizer!\n" +

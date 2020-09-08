@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".ui.viewOrders.OrderDetailsActivity">
 
+    <TextView android:id="@+id/tv_sum_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="HITESH , Here are our shortlisted Vendors for your Wedding"
+        android:padding="10dp" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/viewOrdersRecyclerView"
         android:layout_width="0dp"
