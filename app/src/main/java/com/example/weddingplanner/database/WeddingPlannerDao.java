@@ -17,4 +17,7 @@ public interface WeddingPlannerDao {
 
     @Insert
     void insertItem(PlaceOrderItem placeOrderItem);
+
+    @Query("DELETE FROM PlaceOrder")
+    public void deleteAll();
 }

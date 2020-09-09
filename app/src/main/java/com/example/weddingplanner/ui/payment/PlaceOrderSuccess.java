@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import com.example.weddingplanner.MainActivity;
 import com.example.weddingplanner.R;
+import com.example.weddingplanner.database.WeddingPlannerDatabase;
 
 import butterknife.ButterKnife;
 
@@ -17,6 +18,13 @@ public class PlaceOrderSuccess extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_place_order_success);
         ButterKnife.bind(this);
+        clearDataFromDatabase();
+
+    }
+
+    private void clearDataFromDatabase() {
+        WeddingPlannerDatabase appDb = WeddingPlannerDatabase.getInstance(this);
+        appDb.getWeddingPlannerDao().deleteAll();
     }
 
     @Override

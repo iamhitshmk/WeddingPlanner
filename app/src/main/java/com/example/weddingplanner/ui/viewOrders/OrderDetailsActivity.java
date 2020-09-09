@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.example.weddingplanner.R;
 import com.example.weddingplanner.adapter.OrderDetailsAdapter;
@@ -20,6 +21,9 @@ public class OrderDetailsActivity extends AppCompatActivity {
     @BindView(R.id.viewOrdersRecyclerView)
     RecyclerView viewOrdersRecyclerView;
 
+    @BindView(R.id.tvTotalAmount)
+    TextView tvTotalAmount;
+
     TransactionItem item ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +32,8 @@ public class OrderDetailsActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         item = getIntent().getParcelableExtra("item");
         if (item != null){
-            setAdapter(item.getItems()
-            );
+            tvTotalAmount.setText("Total Amount : " + item.getTotalAmount());
+            setAdapter(item.getItems());
         }
     }
 

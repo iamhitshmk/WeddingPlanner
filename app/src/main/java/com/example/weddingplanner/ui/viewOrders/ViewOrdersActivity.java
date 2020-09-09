@@ -62,7 +62,6 @@ public class ViewOrdersActivity extends AppCompatActivity {
                     if (item != null){
                         viewAllOrders.add(item);
                     }
-
                 }
 
                 if (viewAllOrders.size() > 0){

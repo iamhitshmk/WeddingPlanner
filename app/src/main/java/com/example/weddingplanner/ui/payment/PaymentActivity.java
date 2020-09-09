@@ -62,7 +62,8 @@ public class PaymentActivity extends AppCompatActivity {
             progressBar.setVisibility(View.VISIBLE);
             DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
             String orderNumber = provideOrderNumber();
-            TransactionItem transactionItem = new TransactionItem(orderNumber,item);
+            int totalAmount = getTotalAmount(item);
+            TransactionItem transactionItem = new TransactionItem(orderNumber,totalAmount,item);
             mDatabase.child("add_order").child(orderNumber).setValue(transactionItem)
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
@@ -82,6 +83,15 @@ public class PaymentActivity extends AppCompatActivity {
 
         }
 
+    }
+
+    private int getTotalAmount(ArrayList<PlaceOrderItem> item) {
+        int totalAmount = 0;
+        for (int i = 0 ; i<item.size(); i++){
+            int price = Integer.parseInt(item.get(i).getPrice());
+            totalAmount = totalAmount + price;
+        }
+        return totalAmount;
     }
 
     private String provideOrderNumber() {

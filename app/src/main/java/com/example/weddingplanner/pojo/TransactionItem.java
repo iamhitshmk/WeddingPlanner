@@ -7,8 +7,9 @@ import java.util.ArrayList;
 
 public class TransactionItem implements Parcelable {
 
-    public TransactionItem(String orderId, ArrayList<PlaceOrderItem> items) {
+    public TransactionItem(String orderId, int totalAmount,ArrayList<PlaceOrderItem> items) {
         this.orderId = orderId;
+        this.totalAmount = totalAmount;
         this.items = items;
     }
 
@@ -17,8 +18,19 @@ public class TransactionItem implements Parcelable {
 
     String orderId;
 
+    public int getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(int totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
+    int totalAmount;
+
     protected TransactionItem(Parcel in) {
         orderId = in.readString();
+        totalAmount = in.readInt();
         items = in.createTypedArrayList(PlaceOrderItem.CREATOR);
     }
 
@@ -60,6 +72,7 @@ public class TransactionItem implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(orderId);
+        dest.writeInt(totalAmount);
         dest.writeTypedList(items);
     }
 }
