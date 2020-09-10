@@ -12,7 +12,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="HITESH , Here are our shortlisted Vendors for your Wedding"
+        android:text=" Rajesh ,Here are our Shortlisted Vendors for your Following Wedding RAJESH WEDS SAKSHI "
         android:padding="10dp" />
 
     <androidx.recyclerview.widget.RecyclerView
