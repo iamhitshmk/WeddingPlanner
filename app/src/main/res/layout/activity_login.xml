@@ -26,7 +26,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:padding="10dp"
-        android:textColor="@color/colorBlack"
+        android:textColor="#272727"
+        android:fontFamily="@font/poppins_semibold"
         android:gravity="center"
         android:textSize="18sp"/>
 
@@ -44,7 +45,9 @@
         android:paddingStart="10dp"
         android:paddingLeft="10dp"
         android:paddingEnd="10dp"
-        android:paddingRight="10dp"/>
+        android:paddingRight="10dp"
+        android:textColor="#272727"
+        android:fontFamily="@font/poppins_medium"/>
 
     <EditText
         android:id="@+id/etPassword"
@@ -60,7 +63,9 @@
         android:paddingLeft="10dp"
         android:paddingEnd="10dp"
         android:paddingRight="10dp"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword"
+        android:textColor="#272727"
+        android:fontFamily="@font/poppins_medium"/>
 
     <Button
         android:id="@+id/btnSubmit"
@@ -72,7 +77,8 @@
         android:layout_margin="10dp"
         android:background="@color/colorAccent"
         android:textColor="@color/colorWhite"
-        android:text="Submit"/>
+        android:text="Submit"
+        android:fontFamily="@font/poppins_medium"/>
 
     <Button
         android:id="@+id/btnRegister"
@@ -84,7 +90,8 @@
         android:layout_margin="10dp"
         android:background="@color/colorAccent"
         android:textColor="@color/colorWhite"
-        android:text="Create New Account"/>
+        android:text="Create New Account"
+        android:fontFamily="@font/poppins_medium"/>
 
     <ProgressBar
         android:id="@+id/progressBar"

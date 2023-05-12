@@ -50,7 +50,7 @@ public class VendorFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        vendorViewModel.getVendorList().observe(this, new Observer<ArrayList<VendorItem>>() {
+        vendorViewModel.getVendorList().observe(getViewLifecycleOwner(), new Observer<ArrayList<VendorItem>>() {
             @Override
             public void onChanged(ArrayList<VendorItem> vendorItems) {
                 setUpAdapter(vendorItems);

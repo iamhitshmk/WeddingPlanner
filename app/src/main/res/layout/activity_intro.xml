@@ -40,6 +40,7 @@
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
         android:text="Close"
+        android:fontFamily="@font/poppins_medium"
         android:textColor="@color/colorWhite"
         android:gravity="center"/>
 

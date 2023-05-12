@@ -26,7 +26,8 @@
         app:layout_constraintBottom_toBottomOf="@id/img_filled_circle"
         android:textColor="@color/colorWhite"
         android:textSize="48sp"
-        android:textAllCaps="true"/>
+        android:textAllCaps="true"
+        android:fontFamily="@font/poppins_bold"/>
 
     <TextView
         android:id="@+id/tvName"
@@ -37,7 +38,9 @@
         app:layout_constraintTop_toBottomOf="@id/img_filled_circle"
         android:layout_marginTop="5dp"
         android:gravity="center"
-        android:padding="5dp"/>
+        android:padding="5dp"
+        android:textColor="#272727"
+        android:fontFamily="@font/poppins_medium"/>
 
     <TextView
         android:id="@+id/tvEmailAddress"
@@ -51,7 +54,9 @@
         android:padding="5dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:textSize="12sp"/>
+        android:textSize="12sp"
+        android:textColor="#272727"
+        android:fontFamily="@font/poppins_regular"/>
 
     <TextView
         android:id="@+id/tvEmailAddressValue"
@@ -64,7 +69,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:textSize="16sp"
-        android:textColor="@color/colorBlack"/>
+        android:textColor="#272727"
+        android:fontFamily="@font/poppins_medium"/>
 
     <TextView
         android:id="@+id/tvContactUs"
@@ -78,7 +84,9 @@
         android:padding="5dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:textSize="12sp"/>
+        android:textSize="12sp"
+        android:textColor="#272727"
+        android:fontFamily="@font/poppins_regular"/>
 
     <TextView
         android:id="@+id/tvContactUsValue"
@@ -91,7 +99,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:textSize="16sp"
-        android:textColor="@color/colorBlack"
+        android:textColor="#272727"
+        android:fontFamily="@font/poppins_medium"
         android:text="8888888888"/>
 
 
@@ -108,7 +117,8 @@
         android:layout_marginEnd="16dp"
         android:textSize="16sp"
         android:layout_marginTop="5dp"
-        android:textColor="@color/colorBlack"/>
+        android:textColor="#272727"
+        android:fontFamily="@font/poppins_medium"/>
 
     <TextView
         android:id="@+id/tvLogout"
@@ -123,7 +133,8 @@
         android:layout_marginEnd="16dp"
         android:textSize="16sp"
         android:layout_marginTop="5dp"
-        android:textColor="@color/colorBlack"/>
+        android:textColor="#272727"
+        android:fontFamily="@font/poppins_medium"/>
 
 
 

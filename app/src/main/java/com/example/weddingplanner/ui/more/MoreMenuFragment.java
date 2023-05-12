@@ -58,7 +58,7 @@ public class MoreMenuFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel.getMoreMenuList().observe(this, new Observer<ArrayList<MoreMenuItem>>() {
+        mViewModel.getMoreMenuList().observe(getViewLifecycleOwner(), new Observer<ArrayList<MoreMenuItem>>() {
             @Override
             public void onChanged(ArrayList<MoreMenuItem> moreMenuItems) {
                 setUpAdapter(moreMenuItems);

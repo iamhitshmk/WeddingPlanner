@@ -20,7 +20,9 @@
         android:paddingLeft="10dp"
         android:paddingEnd="10dp"
         android:paddingRight="10dp"
-        android:layout_margin="10dp"/>
+        android:layout_margin="10dp"
+        android:textColor="#272727"
+        android:fontFamily="@font/poppins_medium"/>
 
     <EditText
         android:id="@+id/etEmail"
@@ -37,7 +39,9 @@
         android:paddingLeft="10dp"
         android:paddingEnd="10dp"
         android:paddingRight="10dp"
-        android:layout_margin="10dp"/>
+        android:layout_margin="10dp"
+        android:textColor="#272727"
+        android:fontFamily="@font/poppins_medium"/>
 
 
     <EditText
@@ -56,7 +60,9 @@
         android:paddingLeft="10dp"
         android:paddingEnd="10dp"
         android:paddingRight="10dp"
-        android:layout_margin="10dp"/>
+        android:layout_margin="10dp"
+        android:textColor="#272727"
+        android:fontFamily="@font/poppins_medium"/>
 
     <EditText
         android:id="@+id/etPassword"
@@ -73,7 +79,9 @@
         android:paddingLeft="10dp"
         android:paddingEnd="10dp"
         android:paddingRight="10dp"
-        android:layout_margin="10dp"/>
+        android:layout_margin="10dp"
+        android:textColor="#272727"
+        android:fontFamily="@font/poppins_medium"/>
 
     <EditText
         android:id="@+id/etConfirmPassword"
@@ -90,7 +98,9 @@
         android:paddingLeft="10dp"
         android:paddingEnd="10dp"
         android:paddingRight="10dp"
-        android:layout_margin="10dp"/>
+        android:layout_margin="10dp"
+        android:textColor="#272727"
+        android:fontFamily="@font/poppins_medium"/>
 
     <Button
         android:id="@+id/btnRegister"
@@ -103,7 +113,8 @@
         android:textAllCaps="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etConfirmPassword"/>
+        app:layout_constraintTop_toBottomOf="@+id/etConfirmPassword"
+        android:fontFamily="@font/poppins_medium"/>
 
 
 

@@ -51,7 +51,7 @@ public class RealWeddingsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        realWeddingViewModel.getRealWeddingList().observe(this, new Observer<ArrayList<RealWeddingItem>>() {
+        realWeddingViewModel.getRealWeddingList().observe(getViewLifecycleOwner(), new Observer<ArrayList<RealWeddingItem>>() {
             @Override
             public void onChanged(ArrayList<RealWeddingItem> realWeddingItems) {
                 setUpAdapter(realWeddingItems);

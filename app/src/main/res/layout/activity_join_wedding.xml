@@ -15,7 +15,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/etEnterCode"
         android:text="Join an existing wedding"
-        android:textColor="@color/colorBlack"
+        android:textColor="#272727"
+        android:fontFamily="@font/poppins_semibold"
         android:gravity="center"/>
 
     <EditText
@@ -29,6 +30,8 @@
         android:paddingEnd="10dp"
         android:paddingRight="10dp"
         android:layout_margin="10dp"
+        android:textColor="#272727"
+        android:fontFamily="@font/poppins_medium"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,6 +47,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etEnterCode"
-        android:layout_margin="10dp"/>
+        android:layout_margin="10dp"
+        android:fontFamily="@font/poppins_medium"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

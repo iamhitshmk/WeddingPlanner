@@ -51,7 +51,7 @@ public class ArticlesFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        articlesViewModel.getArticlesList().observe(this, new Observer<ArrayList<ArticlesItem>>() {
+        articlesViewModel.getArticlesList().observe(getViewLifecycleOwner(), new Observer<ArrayList<ArticlesItem>>() {
             @Override
             public void onChanged(ArrayList<ArticlesItem> articlesItems) {
                 setUpAdapter(articlesItems);

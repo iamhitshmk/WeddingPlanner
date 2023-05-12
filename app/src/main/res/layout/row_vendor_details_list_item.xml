@@ -34,7 +34,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imgVendor"
-            android:textColor="@color/colorBlack"
+            android:textColor="#272727"
+            android:fontFamily="@font/poppins_semibold"
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"/>
 
@@ -48,7 +49,9 @@
             android:layout_marginLeft="5dp"
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
-            android:padding="5dp"/>
+            android:padding="5dp"
+            android:textColor="#272727"
+            android:fontFamily="@font/poppins_regular"/>
 
         <TextView
             android:id="@+id/tvReviews"
@@ -60,7 +63,9 @@
             android:layout_marginLeft="5dp"
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
-            android:padding="5dp"/>
+            android:padding="5dp"
+            android:textColor="#272727"
+            android:fontFamily="@font/poppins_regular"/>
 
         <TextView
             android:id="@+id/tvLocation"
@@ -72,7 +77,8 @@
             android:layout_marginLeft="5dp"
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
-            android:padding="5dp"/>
+            android:padding="5dp"
+            android:fontFamily="@font/poppins_regular"/>
 
         <View
             android:id="@+id/seperator"
@@ -99,7 +105,7 @@
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:padding="5dp"
-            android:textStyle="bold"
+            android:fontFamily="@font/poppins_semibold"
             />
 
 

@@ -51,7 +51,7 @@ public class PhotosFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        photosViewModel.getPhotosList().observe(this, new Observer<ArrayList<PhotosItem>>() {
+        photosViewModel.getPhotosList().observe(getViewLifecycleOwner(), new Observer<ArrayList<PhotosItem>>() {
             @Override
             public void onChanged(ArrayList<PhotosItem> photosItems) {
                 setUpAdapter(photosItems);

@@ -25,12 +25,9 @@
         <activity android:name=".ui.viewOrders.ViewOrdersActivity" />
         <activity
             android:name=".ui.splash.SplashActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:exported="true">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".VendorItemDetailsActivity" />
         <activity android:name=".ui.register.RegisterActivity" />
@@ -42,7 +39,13 @@
         <activity android:name=".ui.vendor.VendorListDetailsActivity" />
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

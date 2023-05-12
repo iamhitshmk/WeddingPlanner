@@ -58,7 +58,8 @@
                     app:layout_constraintTop_toTopOf="parent"
                     android:padding="10dp"
                     android:textSize="16sp"
-                    android:textColor="@color/colorBlack"/>
+                    android:textColor="#272727"
+                    android:fontFamily="@font/poppins_semibold"/>
 
 
                 <TextView
@@ -69,7 +70,9 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvName"
                     android:textSize="12sp"
-                    android:padding="10dp"/>
+                    android:padding="10dp"
+                    android:textColor="#272727"
+                    android:fontFamily="@font/poppins_medium"/>
 
                 <Button
                     android:id="@+id/btnMessage"
@@ -116,7 +119,9 @@
                     android:layout_marginTop="10dp"
                     app:layout_constraintTop_toBottomOf="@id/btnMessage"
                     app:layout_constraintStart_toStartOf="@+id/tvReviews"
-                    app:layout_constraintEnd_toEndOf="@+id/tvReviews"/>
+                    app:layout_constraintEnd_toEndOf="@+id/tvReviews"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="#272727"/>
 
                 <TextView
                     android:id="@+id/tvReviews"
@@ -127,7 +132,9 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/tvShortList"
                     app:layout_constraintTop_toBottomOf="@+id/tvRating"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="#272727"/>
 
                 <ImageView
                     android:id="@+id/imageShortList"
@@ -149,7 +156,9 @@
                     app:layout_constraintTop_toBottomOf="@+id/tvRating"
                     android:layout_marginTop="5dp"
                     android:text="ShortList"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:textColor="#272727"
+                    android:fontFamily="@font/poppins_medium"/>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -167,7 +176,8 @@
             android:padding="10dp"
             android:layout_marginTop="10dp"
             android:textSize="14sp"
-            android:textColor="@color/colorBlack"/>
+            android:textColor="#272727"
+            android:fontFamily="@font/poppins_medium"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

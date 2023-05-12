@@ -38,7 +38,9 @@
             app:layout_constraintStart_toEndOf="@id/moreMenuImageView"
             app:layout_constraintEnd_toStartOf="@id/moreMenuArrow"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="#272727"
+            android:fontFamily="@font/poppins_medium"/>
 
         <ImageView
             android:id="@+id/moreMenuArrow"

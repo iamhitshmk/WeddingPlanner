@@ -25,6 +25,7 @@
         app:layout_constraintTop_toTopOf="@+id/imgVendor"
         app:layout_constraintBottom_toBottomOf="@+id/imgVendor"
         android:gravity="center"
+        android:fontFamily="@font/poppins_medium"
         android:textColor="@color/colorWhite"
         />
 
